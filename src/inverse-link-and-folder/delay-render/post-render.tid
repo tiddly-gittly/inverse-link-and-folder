@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/inverse-link-and-folder/delay-render/post-render
+tags: $:/tags/StartupAction/PostRender
+
+<$action-createtiddler $basetitle="$:/state/inverse-link-and-folder/show-after-startup" $overwrite="yes" text="yes" />

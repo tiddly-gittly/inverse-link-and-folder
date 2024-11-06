@@ -1,5 +1,4 @@
 title: $:/plugins/linonetwo/inverse-link-and-folder/configs/
 
-xxx: https://tidgi.fun/
-yyy: https://tidgi.fun/
-zzz: https://tidgi.fun/
+show-preview: yes
+default-show: yes

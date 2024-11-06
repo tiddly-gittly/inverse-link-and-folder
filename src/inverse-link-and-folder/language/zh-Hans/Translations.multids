@@ -1,14 +1,14 @@
 title: $:/plugins/linonetwo/inverse-link-and-folder/language/zh-Hans/
 
-Name: 未命名插件
-Description: 未填描述
-Configs/Description: 通过这些设置，您可以自定义「未命名插件」插件的行为。
+Name: 反链引用
+Description: 通过这个插件，您可以查看指向当前文档的所有链接。
+Configs/Description: 通过这些设置，您可以自定义「反链引用」插件的行为。
 Configs/PluginConfigs/Caption: 插件设置
-Configs/XXX/Caption: 配置甲
-Configs/XXX/Description: 配置甲是甲
-Configs/YYY/Caption: 配置乙
-Configs/ZZZ/Caption: 配置丙
+Configs/show-preview/Caption: 展示预览
+Configs/show-preview/Description: 打开时会通过嵌入完整展示条目预览，可能会导致卡顿，在关闭时只显示标题。
+Configs/default-show/Caption: 默认展示
+Configs/default-show/Description: 是否在打开条目时就展示预览，
 RelatedReferences: 相关引用
 LinkIn: 链入
-TidInThisFolder: 此文件夹中的条目
+FolderTid: 文件夹中的条目
 BackTransclude: 嵌出

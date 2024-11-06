@@ -1,0 +1,17 @@
+title: $:/plugins/linonetwo/inverse-link-and-folder/components/list
+
+\procedure lingo-base() $:/plugins/linonetwo/inverse-link-and-folder/language/
+
+\procedure inverse-link-and-folder-list(filter,lingoKey)
+\whitespace trim
+  <%if [subfilter<filter>] -[is[current]] +[limit[1]] %>
+    <li><strong><$transclude $variable="lingo" title=<<lingoKey>>/></strong></li>
+    <$list filter=<<filter>>>
+      <li>
+        <$link to={{!!title}}>
+          <$macrocall $name="tag-pill-body" tag=<<currentTiddler>> icon={{!!icon}} colour={{!!color}} palette={{$:/palette}} element-tag="""$button""" element-attributes="""tag='span'"""/>
+        </$link>
+      </li>
+    </$list>
+  <%endif%>
+\end

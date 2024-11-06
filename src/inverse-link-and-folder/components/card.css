@@ -1,4 +1,4 @@
-.inverse-link-and-folder-references {
+.inverse-link-and-folder-card {
   font-size: 0.75em;
   padding: 0.5rem;
   list-style: none;
@@ -9,17 +9,17 @@
   flex-wrap: wrap;
 }
 
-.inverse-link-and-folder-references-title {
+.inverse-link-and-folder-card-title {
   font-size: 1.25em;
   width: 100%;
   padding: 0.5rem;
 }
 
-.inverse-link-and-folder-references-reference {
+.inverse-link-and-folder-card-reference {
   width: 50%;
 }
 
-.inverse-link-and-folder-references-reference > a {
+.inverse-link-and-folder-card-reference > a {
   color: inherit;
   background: inherit;
   display: block;
@@ -31,11 +31,11 @@
   transition: all 0.125s ease;
 }
 
-.inverse-link-and-folder-references-reference > a:hover {
+.inverse-link-and-folder-card-reference > a:hover {
   text-decoration: none;
 }
 
-.inverse-link-and-folder-references-content a {
+.inverse-link-and-folder-card-content a {
   color: inherit !important;
   text-decoration: none !important;
   pointer-events: none;

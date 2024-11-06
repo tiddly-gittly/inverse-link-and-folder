@@ -1,14 +1,12 @@
 title: $:/plugins/linonetwo/inverse-link-and-folder/language/en-GB/
 
-Name: Unnamed Plugin
-Description: Unfilled Description
-Configs/Description: These settings let you customise the behaviour of "Unnamed Plugin" plugin.
+Name: Backlink references
+Description: Add inverse link (bi-directional link) and folder information to the bottom of tiddlers
+Configs/Description: These settings let you customise the behaviour of "Backlink references" plugin.
 Configs/PluginConfigs/Caption: Plugin Configs
-Configs/XXX/Caption: XXX
-Configs/XXX/Description: XXX is XXX
-Configs/YYY/Caption: YYY
-Configs/ZZZ/Caption: ZZZ
+Configs/show-preview/Caption: show-preview
+Configs/show-preview/Description: show-preview is show-preview
 RelatedReferences: Related References
 LinkIn: Link In
-TidInThisFolder: Tiddlers in this folder
+FolderTid: Folder's tid
 BackTransclude: Transclude Out

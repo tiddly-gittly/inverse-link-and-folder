@@ -1,30 +1,35 @@
 tags: $:/tags/ViewTemplate
 title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 
-<$reveal
-	state=<<folded-state>>
-	type="nomatch"
-	text="hide"
-	animate="yes"
->
-<!-- <$list filter="[all[current]backtranscludes[]first[]sort[title]]">
-	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">嵌出 (other)-{}->(this)</label>
-</$list>
+\import [[$:/plugins/linonetwo/inverse-link-and-folder/components/card]] [[$:/plugins/linonetwo/inverse-link-and-folder/components/list]]
 
-<<inverse-link-and-folder_list-links filter:"[all[current]backtranscludes[]]" class:"horizontal-list-links" >> -->
+<%if [[$:/state/inverse-link-and-folder/show-after-startup]text[yes]] %>
+	<$reveal state=<<folded-state>> type="nomatch" text="hide" animate="yes">
 
-<$list filter="[all[current]backlinks[]first[]sort[title]]">
-	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">链入</label>
-</$list>
+		<%if [all[current]backlinks[]!is[system]]:else[all[current]tagging[]sort[title]]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
+	
+			<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/show-preview]text[yes]] %>
+				<ul class="inverse-link-and-folder-card">
+					<li class="inverse-link-and-folder-card-title"><strong><<lingo "RelatedReferences">></strong></li>
 
-<<inverse-link-and-folder_list-links filter:"[all[current]backlinks[]]" class:"horizontal-list-links" >>
+					<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
-<$list filter="[all[current]tagging[]first[]]">
-	<label style="margin-left:auto;margin-right:auto;width:fit-content;display:block;">此文件夹中的文件</label>
-</$list>
+					<<inverse-link-and-folder-card "[all[current]tagging[]sort[title]]" "FolderTid">>
 
-<<inverse-link-and-folder_list-links filter:"[all[current]tagging[]sort[title]]" class:"horizontal-list-links" >>
+					<<inverse-link-and-folder-card "[all[current]backtranscludes[]]" "BackTransclude">>
+				</ul>
+			<%else%>
+				<ul class="horizontal-list-links">
+					<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
-</$reveal>
+					<<inverse-link-and-folder-list "[all[current]tagging[]sort[title]]" "FolderTid">>
 
+					<<inverse-link-and-folder-list "[all[current]backtranscludes[]]" "BackTransclude">>
+				</ul>
+			<%endif%>
+
+		<%endif%>
+
+	</$reveal>
+<%endif%>
 

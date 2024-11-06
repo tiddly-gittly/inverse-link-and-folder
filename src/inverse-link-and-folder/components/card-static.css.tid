@@ -1,0 +1,15 @@
+title: $:/plugins/linonetwo/inverse-link-and-folder/components/card-static.css
+tags: $:/tags/Stylesheet
+list-after: $:/plugins/linonetwo/inverse-link-and-folder/components/card.css
+
+<%if [<tv-config-static>match[yes]] %>
+.inverse-link-and-folder-card-reference > a {
+  height: initial;
+  overflow: initial;
+}
+
+.inverse-link-and-folder-card-content {
+  height: 130px;
+  overflow: hidden;
+}
+<%endif%>
