@@ -8,6 +8,7 @@ Configs/XXX/Caption: 配置甲
 Configs/XXX/Description: 配置甲是甲
 Configs/YYY/Caption: 配置乙
 Configs/ZZZ/Caption: 配置丙
+RelatedReferences: 相关引用
 LinkIn: 链入
 TidInThisFolder: 此文件夹中的条目
 BackTransclude: 嵌出

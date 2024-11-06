@@ -1,0 +1,42 @@
+.inverse-link-and-folder-references {
+  font-size: 0.75em;
+  padding: 0.5rem;
+  list-style: none;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inverse-link-and-folder-references-title {
+  font-size: 1.25em;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.inverse-link-and-folder-references-reference {
+  width: 50%;
+}
+
+.inverse-link-and-folder-references-reference > a {
+  color: inherit;
+  background: inherit;
+  display: block;
+  text-decoration: none;
+  padding: 0.5rem;
+  height: 130px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.125s ease;
+}
+
+.inverse-link-and-folder-references-reference > a:hover {
+  text-decoration: none;
+}
+
+.inverse-link-and-folder-references-content a {
+  color: inherit !important;
+  text-decoration: none !important;
+  pointer-events: none;
+}

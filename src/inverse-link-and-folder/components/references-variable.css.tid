@@ -1,0 +1,13 @@
+title: $:/plugins/linonetwo/inverse-link-and-folder/components/references-variable.css
+tags: $:/tags/Stylesheet
+
+\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
+
+.inverse-link-and-folder-references {
+  background: <<color page-background>>;
+}
+
+.inverse-link-and-folder-references-reference > a:hover {
+  color: <<color sidebar-tab-foreground>>;
+  background: <<color sidebar-tab-background>>;
+}

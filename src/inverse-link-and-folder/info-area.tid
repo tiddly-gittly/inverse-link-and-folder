@@ -26,3 +26,5 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 <<inverse-link-and-folder_list-links filter:"[all[current]tagging[]sort[title]]" class:"horizontal-list-links" >>
 
 </$reveal>
+
+
