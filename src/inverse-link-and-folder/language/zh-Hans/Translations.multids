@@ -12,3 +12,5 @@ RelatedReferences: 相关引用
 LinkIn: 链入
 FolderTid: 文件夹中的条目
 BackTransclude: 嵌出
+ShowReferences: 显示引用
+ShowReferences/Description: 点击显示引用，无引用时点击无效。

@@ -1,0 +1,27 @@
+tags: $:/tags/ViewToolbar
+title: $:/plugins/linonetwo/inverse-link-and-folder/ViewToolbarButton
+caption: {{$:/plugins/linonetwo/inverse-link-and-folder/icon}} <<lingo "ShowReferences" "$:/plugins/linonetwo/inverse-link-and-folder/language/">>
+short-caption: <<lingo "ShowReferences" "$:/plugins/linonetwo/inverse-link-and-folder/language/">>
+description: <<lingo "ShowReferences/Description" "$:/plugins/linonetwo/inverse-link-and-folder/language/">>
+
+\procedure lingo-base() $:/plugins/linonetwo/inverse-link-and-folder/language/
+\whitespace trim
+<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]!text[yes]] %>
+  <%if [all[current]backlinks[]!is[system]]:else[all[current]tagging[]sort[title]]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
+    <$button class="tc-btn-invisible">
+      <%if [[$:/state/inverse-link-and-folder/show-manually]!text[yes]] %>
+        <$action-createtiddler $basetitle="$:/state/inverse-link-and-folder/show-manually" $overwrite="yes" text="yes"/>
+      <%else%>
+        <$action-deletetiddler $tiddler="$:/state/inverse-link-and-folder/show-manually"/>
+      <%endif%>
+      <%if [<tv-config-toolbar-icons>match[yes]] %>
+        {{$:/plugins/linonetwo/inverse-link-and-folder/icon}}
+      <%endif%>
+      <%if [<tv-config-toolbar-text>match[yes]] %>
+        <span class="tc-btn-text">
+          <<lingo "ShowReferences">>
+        </span>
+      <%endif%>
+    </$button>
+  <% endif %>
+<% endif %>

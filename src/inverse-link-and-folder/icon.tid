@@ -1,0 +1,4 @@
+title: $:/plugins/linonetwo/inverse-link-and-folder/icon
+
+\parameters (size:"22pt")
+<svg width=<<size>> height=<<size>> class="tc-image-compare-arrows tc-image-button" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 28"><g transform="translate(-4 -10)"><defs><path id="a" d="M0 0h48v48H0V0z"/></defs><clipPath id="b"><use xlink:href="#a" overflow="visible"/></clipPath><path clip-path="url(#b)" d="M18.02 28H4v4h14.02v6L26 30l-7.98-8v6zm11.96-2v-6H44v-4H29.98v-6L22 18l7.98 8z"/></g></svg>
