@@ -5,7 +5,7 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/components/list
 \procedure inverse-link-and-folder-list(filter,lingoKey)
 \whitespace trim
   <%if [subfilter<filter>] -[is[current]] +[limit[1]] %>
-    <li><strong><$transclude $variable="lingo" title=<<lingoKey>>/></strong></li>
+    <li class="inverse-link-and-folder-card-sub-title"><strong><$transclude $variable="lingo" title=<<lingoKey>>/></strong></li>
     <$list filter=<<filter>>>
       <li>
         <$link to={{!!title}}>

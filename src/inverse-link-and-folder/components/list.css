@@ -7,6 +7,10 @@
   padding: 0;
   list-style-type: none;
 }
+.horizontal-list-links {
+	overscroll-behavior: contain;
+	overflow-y: -moz-scrollbars-none;
+}
 .horizontal-list-links::-webkit-scrollbar {
 	width: 0 !important
 }

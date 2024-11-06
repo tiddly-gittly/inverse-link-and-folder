@@ -12,11 +12,18 @@
 .inverse-link-and-folder-card-title {
   font-size: 1.25em;
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.5rem 0;
+}
+
+.inverse-link-and-folder-card-sub-title {
+  font-size: 1em;
+  width: 100%;
+  padding: 0.25rem 0;
 }
 
 .inverse-link-and-folder-card-reference {
-  width: 50%;
+  width: 250px;
+  max-width: 50%;
 }
 
 .inverse-link-and-folder-card-reference > a {
