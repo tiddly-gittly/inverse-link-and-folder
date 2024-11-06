@@ -33,10 +33,10 @@
     ]
   },
   "devDependencies": {
-    "@modern-js/tsconfig": "^2.60.5",
+    "@modern-js/tsconfig": "^2.60.6",
     "@types/jasmine": "^5.1.4",
-    "@types/node": "^22.7.9",
-    "dprint": "^0.47.4",
+    "@types/node": "^22.9.0",
+    "dprint": "^0.47.5",
     "eslint-config-tidgi": "^1.2.3",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
@@ -47,8 +47,8 @@
     "typescript": "^5.6.3"
   },
   "dependencies": {
-    "npm-check-updates": "^17.1.4",
+    "npm-check-updates": "^17.1.10",
     "tiddlywiki": "^5.3.5",
-    "tiddlywiki-plugin-dev": "^0.3.1"
+    "tiddlywiki-plugin-dev": "^0.3.2"
   }
 }
