@@ -6,7 +6,10 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 \procedure inverse-link-and-folder-contents()
 <%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/show-preview]text[yes]] %>
 	<ul class="inverse-link-and-folder-card">
-		<li class="inverse-link-and-folder-card-title"><strong><<lingo "RelatedReferences">></strong></li>
+		<li class="inverse-link-and-folder-card-title">
+			<strong><<lingo "RelatedReferences">></strong>
+			<$button>{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
+		</li>
 		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]] -[subfilter<excludeFilter>]" "LinkIn">>
 
 		<%if [all[current]!subfilter<notShowFolderUnder>] %>
@@ -17,6 +20,10 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 	</ul>
 <%else%>
 	<ul class="horizontal-list-links">
+		<li class="inverse-link-and-folder-card-title">
+			<strong><<lingo "RelatedReferences">></strong>
+			<$button>{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
+		</li>
 		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]] -[subfilter<excludeFilter>]" "LinkIn">>
 
 		<%if [all[current]!subfilter<notShowFolderUnder>] %>
@@ -34,9 +41,11 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 		<$let excludeFilter={{$:/plugins/linonetwo/inverse-link-and-folder/configs/exclude-filter}} notShowFolderUnder={{$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under}}>
 			<%if [all[current]backlinks[]!is[system]]:else[all[current]tagging[]sort[title]]:else[all[current]backtranscludes[]] -[subfilter<excludeFilter>] -[is[current]] +[limit[1]] %>
 				<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]text[yes]] %>
-					<<inverse-link-and-folder-contents>>
+					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>!text[no]] %>
+						<<inverse-link-and-folder-contents>>
+					<%endif%>
 				<%else%>
-					<%if [[$:/state/inverse-link-and-folder/show-manually]text[yes]] %>
+					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>text[yes]] %>
 						<<inverse-link-and-folder-contents>>
 					<%endif%>
 				<%endif%>
