@@ -7,20 +7,23 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 <%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/show-preview]text[yes]] %>
 	<ul class="inverse-link-and-folder-card">
 		<li class="inverse-link-and-folder-card-title"><strong><<lingo "RelatedReferences">></strong></li>
+		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]] -[subfilter<excludeFilter>]" "LinkIn">>
 
-		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]]" "LinkIn">>
+		<%if [all[current]!subfilter<notShowFolderUnder>] %>
+			<<inverse-link-and-folder-card "[all[current]tagging[]sort[title]] -[subfilter<excludeFilter>]" "FolderTid">>
+		<%endif%>
 
-		<<inverse-link-and-folder-card "[all[current]tagging[]sort[title]]" "FolderTid">>
-
-		<<inverse-link-and-folder-card "[all[current]backtranscludes[]]" "BackTransclude">>
+		<<inverse-link-and-folder-card "[all[current]backtranscludes[]] -[subfilter<excludeFilter>]" "BackTransclude">>
 	</ul>
 <%else%>
 	<ul class="horizontal-list-links">
-		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]]" "LinkIn">>
+		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]] -[subfilter<excludeFilter>]" "LinkIn">>
 
-		<<inverse-link-and-folder-list "[all[current]tagging[]sort[title]]" "FolderTid">>
+		<%if [all[current]!subfilter<notShowFolderUnder>] %>
+			<<inverse-link-and-folder-list "[all[current]tagging[]sort[title]] -[subfilter<excludeFilter>] -[subfilter<notShowFolderUnder>]" "FolderTid">>
+		<%endif%>
 
-		<<inverse-link-and-folder-list "[all[current]backtranscludes[]]" "BackTransclude">>
+		<<inverse-link-and-folder-list "[all[current]backtranscludes[]] -[subfilter<excludeFilter>]" "BackTransclude">>
 	</ul>
 <%endif%>
 \end
@@ -28,17 +31,17 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 
 <%if [[$:/state/inverse-link-and-folder/show-after-startup]text[yes]] %>
 	<$reveal state=<<folded-state>> type="nomatch" text="hide" animate="yes">
-
-		<%if [all[current]backlinks[]!is[system]]:else[all[current]tagging[]sort[title]]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
-			<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]text[yes]] %>
-				<<inverse-link-and-folder-contents>>
-			<%else%>
-				<%if [[$:/state/inverse-link-and-folder/show-manually]text[yes]] %>
+		<$let excludeFilter={{$:/plugins/linonetwo/inverse-link-and-folder/configs/exclude-filter}} notShowFolderUnder={{$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under}}>
+			<%if [all[current]backlinks[]!is[system]]:else[all[current]tagging[]sort[title]]:else[all[current]backtranscludes[]] -[subfilter<excludeFilter>] -[is[current]] +[limit[1]] %>
+				<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]text[yes]] %>
 					<<inverse-link-and-folder-contents>>
+				<%else%>
+					<%if [[$:/state/inverse-link-and-folder/show-manually]text[yes]] %>
+						<<inverse-link-and-folder-contents>>
+					<%endif%>
 				<%endif%>
 			<%endif%>
-		<%endif%>
-
+		</$let>
 	</$reveal>
 <%endif%>
 

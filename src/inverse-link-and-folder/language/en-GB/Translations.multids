@@ -4,8 +4,14 @@ Name: Backlink references
 Description: Add inverse link (bi-directional link) and folder information to the bottom of tiddlers
 Configs/Description: These settings let you customise the behaviour of "Backlink references" plugin.
 Configs/PluginConfigs/Caption: Plugin Configs
-Configs/show-preview/Caption: show-preview
-Configs/show-preview/Description: show-preview is show-preview
+Configs/show-preview/Caption: show preview
+Configs/show-preview/Description: Show the full preview of the tiddler by embedding it when opened, may cause lag, only the title is shown when closed.
+Configs/default-show/Caption: default-show
+Configs/default-show/Description: if or not the preview will be shown when the tiddler is opened, you can find the ‘Show Reference’ button in the viewing toolbar after closing.
+Configs/exclude-filter/Caption: Exclude Filter
+Configs/exclude-filter/Description: tiddlers matched by this filter will not be shown in the backlink of other tiddlers, calendar tiddlers are filtered out by default.
+Configs/not-show-folder-under/Caption: tiddlers that don't show file lists
+Configs/not-show-folder-under/Description: tiddlers matched by this filter will not be shown under the file list, e.g. if you have already shown it in some other way, you can set it here so that it won't be shown again.
 RelatedReferences: Related References
 LinkIn: Link In
 FolderTid: Folder's tid

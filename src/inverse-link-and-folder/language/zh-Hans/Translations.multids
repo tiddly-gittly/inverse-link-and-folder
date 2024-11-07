@@ -7,7 +7,11 @@ Configs/PluginConfigs/Caption: 插件设置
 Configs/show-preview/Caption: 展示预览
 Configs/show-preview/Description: 打开时会通过嵌入完整展示条目预览，可能会导致卡顿，在关闭时只显示标题。
 Configs/default-show/Caption: 默认展示
-Configs/default-show/Description: 是否在打开条目时就展示预览，
+Configs/default-show/Description: 是否在打开条目时就展示预览，关闭后可以在查看工具栏里找到「显示引用」按钮。
+Configs/exclude-filter/Caption: 排除筛选器
+Configs/exclude-filter/Description: 被这个筛选器匹配的条目将不会被展示在其它条目的反链里，默认过滤掉日历条目。
+Configs/not-show-folder-under/Caption: 不展示文件列表的条目
+Configs/not-show-folder-under/Description: 被这个筛选器匹配的条目下不会展示文件列表，例如你已经用其它方式展示了就可以在这里设置让它不重复展示。
 RelatedReferences: 相关引用
 LinkIn: 链入
 FolderTid: 文件夹中的条目
