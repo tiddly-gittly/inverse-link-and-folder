@@ -7,6 +7,8 @@
   
   display: flex;
   flex-wrap: wrap;
+  max-height: 250px;
+  overflow-y: auto;
 }
 
 .inverse-link-and-folder-card-title {
@@ -16,6 +18,11 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.inverse-link-and-folder-card-close {
+  background: unset;
+  border: none;
 }
 
 .inverse-link-and-folder-card-sub-title {

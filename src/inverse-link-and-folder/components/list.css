@@ -1,4 +1,4 @@
-.horizontal-list-links {
+.inverse-link-and-folder-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -7,16 +7,16 @@
   padding: 0;
   list-style-type: none;
 }
-.horizontal-list-links {
+.inverse-link-and-folder-list {
 	overscroll-behavior: contain;
 	overflow-y: -moz-scrollbars-none;
 }
-.horizontal-list-links::-webkit-scrollbar {
+.inverse-link-and-folder-list::-webkit-scrollbar {
 	width: 0 !important
 }
 
-.horizontal-list-links li a,
-.horizontal-list-links li a:hover {
+.inverse-link-and-folder-list li a,
+.inverse-link-and-folder-list li a:hover {
   line-height: unset;
   background-color: unset;
   border: none;
