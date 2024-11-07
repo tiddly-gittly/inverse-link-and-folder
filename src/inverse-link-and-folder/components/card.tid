@@ -9,7 +9,11 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/components/card
     <$list filter=<<filter>>>
       <li class="inverse-link-and-folder-card-reference">
         <$link>
-          <b><$view field="title" /></b>
+          <b>
+            <$transclude field="caption">
+              <$view field="title"/>
+            </$transclude>
+          </b>
           <div class="inverse-link-and-folder-card-content">
             <$transclude field="text" mode="inline" />
           </div>
