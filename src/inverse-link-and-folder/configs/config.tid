@@ -14,7 +14,10 @@ caption: <<lingo Name $:/plugins/linonetwo/inverse-link-and-folder/language/>>
 :<$checkbox tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/show-preview" field="text" checked="yes" unchecked=""> <<lingo Configs/show-preview/Description>></$checkbox>
 ;<<lingo Configs/default-show/Caption>>
 :<$checkbox tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show" field="text" checked="yes" unchecked=""> <<lingo Configs/default-show/Description>></$checkbox>
-;<<lingo Configs/exclude-filter/Caption>>
-:<$edit-text tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/exclude-filter" tabindex=-1 focus=false cancelPopups="yes" fileDrop=no tag="input" /> <<lingo Configs/exclude-filter/Description>>
+
+!!! <<lingo "FolderTid">>
+
+;<<lingo Configs/folder-exclude-filter/Caption>>
+:<$edit-text tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/folder-exclude-filter" tabindex=-1 focus=false cancelPopups="yes" fileDrop=no tag="input" /> <<lingo Configs/folder-exclude-filter/Description>>
 ;<<lingo Configs/not-show-folder-under/Caption>>
 :<$edit-text tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under" tabindex=-1 focus=false cancelPopups="yes" fileDrop=no tag="input" /> <<lingo Configs/not-show-folder-under/Description>>

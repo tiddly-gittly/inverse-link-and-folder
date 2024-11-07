@@ -10,13 +10,13 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]] -[subfilter<excludeFilter>]" "LinkIn">>
+		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
 		<%if [all[current]!subfilter<notShowFolderUnder>] %>
-			<<inverse-link-and-folder-card "[all[current]tagging[]sort[title]] -[subfilter<excludeFilter>]" "FolderTid">>
+			<<inverse-link-and-folder-card "[all[current]tagging[]!subfilter<folderExcludeFilter>sort[title]]" "FolderTid">>
 		<%endif%>
 
-		<<inverse-link-and-folder-card "[all[current]backtranscludes[]] -[subfilter<excludeFilter>]" "BackTransclude">>
+		<<inverse-link-and-folder-card "[all[current]backtranscludes[]]" "BackTransclude">>
 	</ul>
 <%else%>
 	<ul class="inverse-link-and-folder-list">
@@ -24,13 +24,13 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]sort[title]] -[subfilter<excludeFilter>]" "LinkIn">>
+		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]sort[title]]" "LinkIn">>
 
 		<%if [all[current]!subfilter<notShowFolderUnder>] %>
-			<<inverse-link-and-folder-list "[all[current]tagging[]sort[title]] -[subfilter<excludeFilter>] -[subfilter<notShowFolderUnder>]" "FolderTid">>
+			<<inverse-link-and-folder-list "[all[current]tagging[]!subfilter<folderExcludeFilter>sort[title]]" "FolderTid">>
 		<%endif%>
 
-		<<inverse-link-and-folder-list "[all[current]backtranscludes[]sort[title]] -[subfilter<excludeFilter>]" "BackTransclude">>
+		<<inverse-link-and-folder-list "[all[current]backtranscludes[]sort[title]]" "BackTransclude">>
 	</ul>
 <%endif%>
 \end
@@ -38,8 +38,8 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 
 <%if [[$:/state/inverse-link-and-folder/show-after-startup]text[yes]] %>
 	<$reveal state=<<folded-state>> type="nomatch" text="hide" animate="yes">
-		<$let excludeFilter={{$:/plugins/linonetwo/inverse-link-and-folder/configs/exclude-filter}} notShowFolderUnder={{$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under}}>
-			<%if [all[current]backlinks[]!is[system]]:else[all[current]tagging[]]-[subfilter<notShowFolderUnder>]:else[all[current]backtranscludes[]] -[subfilter<excludeFilter>] -[is[current]] +[limit[1]] %>
+		<$let folderExcludeFilter={{$:/plugins/linonetwo/inverse-link-and-folder/configs/folder-exclude-filter}} notShowFolderUnder={{$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under}}>
+			<%if [all[current]backlinks[]!is[system]]:else[all[current]!subfilter<notShowFolderUnder>tagging[]!subfilter<folderExcludeFilter>]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
 				<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]text[yes]] %>
 					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>!text[no]] %>
 						<<inverse-link-and-folder-contents>>
