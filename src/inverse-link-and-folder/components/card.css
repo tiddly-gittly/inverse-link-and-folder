@@ -25,8 +25,13 @@
   width: 250px;
   max-width: 50%;
 }
+@media (max-width: 815px) {
+  .inverse-link-and-folder-card-reference {
+    width: 50%;
+  }
+}
 
-.inverse-link-and-folder-card-reference > a {
+.inverse-link-and-folder-card-reference > a.tc-tiddlylink {
   color: inherit;
   background: inherit;
   display: block;
@@ -37,12 +42,17 @@
   position: relative;
   transition: all 0.125s ease;
 }
+@media (max-width: 815px) {
+  .inverse-link-and-folder-card-reference > a.tc-tiddlylink {
+    height: 80px;
+  }
+}
 
-.inverse-link-and-folder-card-reference > a:hover {
+.inverse-link-and-folder-card-reference > a.tc-tiddlylink:hover {
   text-decoration: none;
 }
 
-.inverse-link-and-folder-card-content a {
+.inverse-link-and-folder-card-content a.tc-tiddlylink {
   color: inherit !important;
   text-decoration: none !important;
   pointer-events: none;
