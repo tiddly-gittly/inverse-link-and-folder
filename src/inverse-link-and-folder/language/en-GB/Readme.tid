@@ -6,4 +6,18 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/language/en-GB/Readme
 
 <<lingo Description>>
 
-This plugin is based on the [[Reverse Link Panel in Krystal Horizontal Story Flow Plugin|https://github.com/crazko/krystal/blob/d1d0574ce36cd8c7a7f3e88eaa0bc3aa985a9305/plugins/rmnvsl/krystal/references.tid]] and developed further.
+!! Features
+
+This plugin provides these additional info on the bottom of every tiddler:
+
+# other tiddler linking to this tiddler
+# tiddlers in this folder (tagged with this tiddler's title, tagging in TiddlyWiki is equivalent to putting into a folder)
+# tiddlers that transclude this tiddler (tiddlers using `{{}}` syntax to include this tiddler)
+
+!! Credits
+
+This plugin is inspired by RoamResearch.
+
+List style and filter in infobar is learnt from copy&paste-ing of Jeremy's code and tutorials.
+
+The card style is based on the [[Reverse Link Panel in Krystal Horizontal Story Flow Plugin|https://github.com/crazko/krystal/blob/d1d0574ce36cd8c7a7f3e88eaa0bc3aa985a9305/plugins/rmnvsl/krystal/references.tid]] and developed further.
