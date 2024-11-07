@@ -2,5 +2,5 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/configs/
 
 show-preview: yes
 default-show: yes
-folder-exclude-filter: [calendarEntry[yes]] [{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]
+folder-exclude-filter: [calendarEntry[yes]] [tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]
 not-show-folder-under: Index
