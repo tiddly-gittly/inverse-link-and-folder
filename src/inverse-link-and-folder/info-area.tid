@@ -13,8 +13,10 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
 		<%if [all[current]!subfilter<notShowFolderUnder>] %>
-			<<inverse-link-and-folder-card "[all[current]tagging[]!subfilter<folderExcludeFilter>sort[title]]" "FolderTid">>
+			<<inverse-link-and-folder-card "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
+
+		<<inverse-link-and-folder-card "[all[tiddlers]prefix<currentTiddler>] -[<currentTiddler>]" "SlashFolderTid">>
 
 		<<inverse-link-and-folder-card "[all[current]backtranscludes[]]" "BackTransclude">>
 	</ul>
@@ -24,13 +26,15 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]sort[title]]" "LinkIn">>
+		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
 		<%if [all[current]!subfilter<notShowFolderUnder>] %>
-			<<inverse-link-and-folder-list "[all[current]tagging[]!subfilter<folderExcludeFilter>sort[title]]" "FolderTid">>
+			<<inverse-link-and-folder-list "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
-		<<inverse-link-and-folder-list "[all[current]backtranscludes[]sort[title]]" "BackTransclude">>
+		<<inverse-link-and-folder-list "[all[tiddlers]prefix<currentTiddler>] -[<currentTiddler>]" "SlashFolderTid">>
+
+		<<inverse-link-and-folder-list "[all[current]backtranscludes[]]" "BackTransclude">>
 	</ul>
 <%endif%>
 \end

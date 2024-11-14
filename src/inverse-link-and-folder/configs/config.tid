@@ -15,7 +15,7 @@ caption: <<lingo Name $:/plugins/linonetwo/inverse-link-and-folder/language/>>
 ;<<lingo Configs/default-show/Caption>>
 :<$checkbox tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show" field="text" checked="yes" unchecked=""> <<lingo Configs/default-show/Description>></$checkbox>
 
-!!! <<lingo "FolderTid">>
+!!! <<lingo "TagFolderTid">>
 
 ;<<lingo Configs/folder-exclude-filter/Caption>>
 :<$edit-text tiddler="$:/plugins/linonetwo/inverse-link-and-folder/configs/folder-exclude-filter" tabindex=-1 focus=false cancelPopups="yes" fileDrop=no tag="input" /> <<lingo Configs/folder-exclude-filter/Description>>

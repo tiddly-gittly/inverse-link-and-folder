@@ -11,7 +11,11 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/language/zh-Hans/Readme
 本插件在每个条目的底部提供以下附加信息：
 
 # 链接到此条目的其他条目（反链）
-# 此文件夹中的条目（用此条目的标题打标签，太微里加标签的动作就等价于放入文件夹）
+# 此文件夹中的条目
+## <<lingo "TagFolderTid">>
+##* <<lingo "TagFolderTid/Description">>
+## <<lingo "SlashFolderTid">>
+##* <<lingo "SlashFolderTid/Description">>
 # 被哪些条目嵌入（被使用 `{{}}` 语法嵌入的条目）
 
 !! 功劳

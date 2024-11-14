@@ -14,7 +14,10 @@ Configs/not-show-folder-under/Caption: 不展示文件列表的条目
 Configs/not-show-folder-under/Description: 被这个筛选器匹配的条目下不会展示文件列表，例如你已经用其它方式展示了就可以在这里设置让它不重复展示。
 RelatedReferences: 相关引用
 LinkIn: 链入
-FolderTid: 文件夹内容
+TagFolderTid: 标签文件夹内容
+TagFolderTid/Description: 太微里标签可以表示文件夹，这里展示的子条目的标签列表里含有当前条目的标题，子条目通过加标签而放入文件夹内。当前条目就是文件夹。
+SlashFolderTid: 斜杠文件夹内容
+SlashFolderTid/Description: 太微里斜杠可以表示文件夹，这里展示的是通过在当前条目的标题后加上斜杠，然后跟上子条目标题，从而放入文件夹内的子条目。当前条目就是文件夹。
 BackTransclude: 被嵌入
 ShowReferences: 显示引用
 ShowReferences/Description: 点击显示引用，无引用时点击无效。

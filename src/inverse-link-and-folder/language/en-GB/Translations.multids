@@ -14,6 +14,11 @@ Configs/not-show-folder-under/Caption: tiddlers that don't show file lists
 Configs/not-show-folder-under/Description: tiddlers matched by this filter will not be shown under the file list, e.g. if you have already shown it in some other way, you can set it here so that it won't be shown again.
 RelatedReferences: Related References
 LinkIn: Link In
-FolderTid: Tid in Folder
+TagFolderTid: Tag folder content
+TagFolderTid/Description: TiddlyWiki tags can represent folders. The list of tags for the sub-tiddlers shown here contains the title of the current tiddler, and the sub-tiddlers are placed in the folder by adding tags. The current tiddler is the folder.
+SlashFolderTid: Slash folder content
+SlashFolderTid/Description: The slash in the tilde can indicate a folder, shown here is a sub-tiddler that is placed into a folder by adding a slash to the title of the current tiddler, followed by the title of the sub-tiddler. The current tiddler is the folder.
+
+Translated with DeepL.com (free version)
 BackTransclude: Transcluded by
 ShowReferences: Show References
