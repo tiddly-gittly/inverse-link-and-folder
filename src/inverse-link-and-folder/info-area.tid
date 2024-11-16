@@ -16,7 +16,7 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<<inverse-link-and-folder-card "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
-		<<inverse-link-and-folder-card "[all[tiddlers]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
+		<<inverse-link-and-folder-card "[all[tiddlers]!is[system]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
 
 		<<inverse-link-and-folder-card "[all[current]backtranscludes[]]" "BackTransclude">>
 	</ul>
@@ -32,7 +32,7 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<<inverse-link-and-folder-list "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
-		<<inverse-link-and-folder-list "[all[tiddlers]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
+		<<inverse-link-and-folder-list "[all[tiddlers]!is[system]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
 
 		<<inverse-link-and-folder-list "[all[current]backtranscludes[]]" "BackTransclude">>
 	</ul>
