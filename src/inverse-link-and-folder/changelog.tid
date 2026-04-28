@@ -1,0 +1,9 @@
+title: $:/plugins/linonetwo/inverse-link-and-folder/changelog
+caption: Changelog
+type: text/vnd.tiddlywiki
+
+!! v1.3.0 (2026-04-28)
+
+* Added a hover-to-show lazy rendering mode for the bottom reference area, enabled by default to reduce initial render cost on large wikis.
+* Added a recent navigation section so the current tiddler can jump back to the tiddler it was just opened from.
+* Restored the original backlink, tag folder, slash folder, and backtransclude sections while integrating the new recent navigation block.

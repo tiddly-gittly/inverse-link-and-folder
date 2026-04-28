@@ -10,8 +10,11 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-                <<inverse-link-and-folder-card "[[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]" "RecentNav">>
+		<<inverse-link-and-folder-card "[[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]" "RecentNav">>
+		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
+		<%if [all[current]!subfilter<notShowFolderUnder>] %>
+			<<inverse-link-and-folder-card "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
 		<<inverse-link-and-folder-card "[all[tiddlers]!is[system]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
@@ -24,8 +27,11 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-                <<inverse-link-and-folder-list "[[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]" "RecentNav">>
+		<<inverse-link-and-folder-list "[[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]" "RecentNav">>
+		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]]" "LinkIn">>
 
+		<%if [all[current]!subfilter<notShowFolderUnder>] %>
+			<<inverse-link-and-folder-list "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
 		<<inverse-link-and-folder-list "[all[tiddlers]!is[system]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
@@ -37,19 +43,19 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 
 \procedure hover-content()
 <$let hoverStateTiddler={{{ [[$:/state/inverse-link-and-folder/hover/]addsuffix<currentTiddler>] }}}>
-        <%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/hover-to-show]text[yes]] %>
-                <%if [<hoverStateTiddler>text[yes]] %>
-                        <<inverse-link-and-folder-contents>>
-                <%else%>
-                        <$eventcatcher events="mouseenter" actions="""<$action-setfield $tiddler=<<hoverStateTiddler>> text="yes"/>""">
-                                <div class="tc-message-box" style="cursor: pointer; opacity: 0.5; text-align: center;">
-                                        <<lingo "HoverToShow">>
-                                </div>
-                        </$eventcatcher>
-                <%endif%>
-        <%else%>
-                <<inverse-link-and-folder-contents>>
-        <%endif%>
+	<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/hover-to-show]text[yes]] %>
+		<%if [<hoverStateTiddler>text[yes]] %>
+			<<inverse-link-and-folder-contents>>
+		<%else%>
+			<$eventcatcher events="mouseenter" actions="""<$action-setfield $tiddler=<<hoverStateTiddler>> text="yes"/>""">
+				<div style="cursor: pointer; opacity: 0.65; text-align: center; padding: 0.5em 0; border-top: 1px solid rgba(128,128,128,0.2);">
+					<<lingo "HoverToShow">>
+				</div>
+			</$eventcatcher>
+		<%endif%>
+	<%else%>
+		<<inverse-link-and-folder-contents>>
+	<%endif%>
 </$let>
 \end
 
