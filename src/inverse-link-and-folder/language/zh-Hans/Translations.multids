@@ -8,11 +8,15 @@ Configs/show-preview/Caption: 展示预览
 Configs/show-preview/Description: 打开时会通过嵌入完整展示条目预览，可能会导致卡顿，在关闭时只显示标题。
 Configs/default-show/Caption: 默认展示
 Configs/default-show/Description: 是否在打开条目时就展示预览，关闭后可以在查看工具栏里找到「显示引用」按钮。
+Configs/hover-to-show/Caption: 悬浮展示
+Configs/hover-to-show/Description: 延迟加载，鼠标悬浮时才渲染底部引用内容，防止在大维基中打开条目时造成卡顿。
 Configs/folder-exclude-filter/Caption: 文件排除筛选器
 Configs/folder-exclude-filter/Description: 被这个筛选器匹配的条目将不会被展示在其它条目的文件列表里，默认过滤掉日历条目等。
 Configs/not-show-folder-under/Caption: 不展示文件列表的条目
 Configs/not-show-folder-under/Description: 被这个筛选器匹配的条目下不会展示文件列表，例如你已经用其它方式展示了就可以在这里设置让它不重复展示。
 RelatedReferences: 相关引用
+HoverToShow: 鼠标悬浮以查看相关引用
+RecentNav: 最近从这里跳转
 LinkIn: 链入
 TagFolderTid: 标签文件夹内容
 TagFolderTid/Description: 太微里标签可以表示文件夹，这里展示的子条目的标签列表里含有当前条目的标题，子条目通过加标签而放入文件夹内。当前条目就是文件夹。

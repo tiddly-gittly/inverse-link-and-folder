@@ -10,10 +10,8 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-		<<inverse-link-and-folder-card "[all[current]backlinks[]!is[system]]" "LinkIn">>
+                <<inverse-link-and-folder-card "[[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]" "RecentNav">>
 
-		<%if [all[current]!subfilter<notShowFolderUnder>] %>
-			<<inverse-link-and-folder-card "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
 		<<inverse-link-and-folder-card "[all[tiddlers]!is[system]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
@@ -26,10 +24,8 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 			<strong><<lingo "RelatedReferences">></strong>
 			<$button class="inverse-link-and-folder-card-close">{{$:/core/images/close-button}}<$action-createtiddler $basetitle={{{ [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>] }}} $overwrite="yes" text="no"/></$button>
 		</li>
-		<<inverse-link-and-folder-list "[all[current]backlinks[]!is[system]]" "LinkIn">>
+                <<inverse-link-and-folder-list "[[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]" "RecentNav">>
 
-		<%if [all[current]!subfilter<notShowFolderUnder>] %>
-			<<inverse-link-and-folder-list "[all[current]tagging[]!subfilter<folderExcludeFilter>]" "TagFolderTid">>
 		<%endif%>
 
 		<<inverse-link-and-folder-list "[all[tiddlers]!is[system]!title<currentTiddler>prefix<currentTiddler>]" "SlashFolderTid">>
@@ -39,18 +35,35 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 <%endif%>
 \end
 
+\procedure hover-content()
+<$let hoverStateTiddler={{{ [[$:/state/inverse-link-and-folder/hover/]addsuffix<currentTiddler>] }}}>
+        <%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/hover-to-show]text[yes]] %>
+                <%if [<hoverStateTiddler>text[yes]] %>
+                        <<inverse-link-and-folder-contents>>
+                <%else%>
+                        <$eventcatcher events="mouseenter" actions="""<$action-setfield $tiddler=<<hoverStateTiddler>> text="yes"/>""">
+                                <div class="tc-message-box" style="cursor: pointer; opacity: 0.5; text-align: center;">
+                                        <<lingo "HoverToShow">>
+                                </div>
+                        </$eventcatcher>
+                <%endif%>
+        <%else%>
+                <<inverse-link-and-folder-contents>>
+        <%endif%>
+</$let>
+\end
 
 <%if [[$:/state/inverse-link-and-folder/show-after-startup]text[yes]] %>
 	<$reveal state=<<folded-state>> type="nomatch" text="hide" animate="yes">
 		<$let folderExcludeFilter={{$:/plugins/linonetwo/inverse-link-and-folder/configs/folder-exclude-filter}} notShowFolderUnder={{$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under}}>
-			<%if [all[current]backlinks[]!is[system]]:else[all[current]!subfilter<notShowFolderUnder>tagging[]!subfilter<folderExcludeFilter>]:else[all[tiddlers]!title<currentTiddler>prefix<currentTiddler>]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
+			<%if [[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]:else[all[current]backlinks[]!is[system]]:else[all[current]!subfilter<notShowFolderUnder>tagging[]!subfilter<folderExcludeFilter>]:else[all[tiddlers]!title<currentTiddler>prefix<currentTiddler>]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
 				<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]text[yes]] %>
 					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>!text[no]] %>
-						<<inverse-link-and-folder-contents>>
+						<<hover-content>>
 					<%endif%>
 				<%else%>
 					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>text[yes]] %>
-						<<inverse-link-and-folder-contents>>
+						<<hover-content>>
 					<%endif%>
 				<%endif%>
 			<%endif%>

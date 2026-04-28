@@ -4,3 +4,4 @@ show-preview: yes
 default-show: yes
 folder-exclude-filter: [calendarEntry[yes]] [tag{$:/plugins/linonetwo/intention-tower-knowledge-graph/Config/task-tag}]
 not-show-folder-under: Index
+hover-to-show: yes

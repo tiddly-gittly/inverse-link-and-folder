@@ -8,11 +8,15 @@ Configs/show-preview/Caption: show preview
 Configs/show-preview/Description: Show the full preview of the tiddler by embedding it when opened, may cause lag, only the title is shown when closed.
 Configs/default-show/Caption: default-show
 Configs/default-show/Description: if or not the preview will be shown when the tiddler is opened, you can find the ‘Show Reference’ button in the viewing toolbar after closing.
+Configs/hover-to-show/Caption: hover-to-show
+Configs/hover-to-show/Description: Render bottom reference cards only on mouse hover, which prevents lag on opening.
 Configs/folder-exclude-filter/Caption: File exclude filter
 Configs/folder-exclude-filter/Description: tiddlers matched by this filter will not be shown in the folder list of other tiddlers, calendar tiddlers are filtered out by default.
 Configs/not-show-folder-under/Caption: tiddlers that don't show file lists
 Configs/not-show-folder-under/Description: tiddlers matched by this filter will not be shown under the file list, e.g. if you have already shown it in some other way, you can set it here so that it won't be shown again.
 RelatedReferences: Related References
+HoverToShow: Hover to view related references
+RecentNav: Jumped from
 LinkIn: Link In
 TagFolderTid: Tag folder content
 TagFolderTid/Description: TiddlyWiki tags can represent folders. The list of tags for the sub-tiddlers shown here contains the title of the current tiddler, and the sub-tiddlers are placed in the folder by adding tags. The current tiddler is the folder.
