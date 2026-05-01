@@ -41,35 +41,17 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/info-area
 <%endif%>
 \end
 
-\procedure hover-content()
-<$let hoverStateTiddler={{{ [[$:/state/inverse-link-and-folder/hover/]addsuffix<currentTiddler>] }}}>
-	<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/hover-to-show]text[yes]] %>
-		<%if [<hoverStateTiddler>text[yes]] %>
-			<<inverse-link-and-folder-contents>>
-		<%else%>
-			<$eventcatcher events="mouseenter" actions="""<$action-setfield $tiddler=<<hoverStateTiddler>> text="yes"/>""">
-				<div style="cursor: pointer; opacity: 0.65; text-align: center; padding: 0.5em 0; border-top: 1px solid rgba(128,128,128,0.2);">
-					<<lingo "HoverToShow">>
-				</div>
-			</$eventcatcher>
-		<%endif%>
-	<%else%>
-		<<inverse-link-and-folder-contents>>
-	<%endif%>
-</$let>
-\end
-
 <%if [[$:/state/inverse-link-and-folder/show-after-startup]text[yes]] %>
 	<$reveal state=<<folded-state>> type="nomatch" text="hide" animate="yes">
 		<$let folderExcludeFilter={{$:/plugins/linonetwo/inverse-link-and-folder/configs/folder-exclude-filter}} notShowFolderUnder={{$:/plugins/linonetwo/inverse-link-and-folder/configs/not-show-folder-under}}>
 			<%if [[$:/HistoryList]get[text]jsonindexes[]last[1]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] :intersection[<currentTiddler>] :map[[$:/HistoryList]get[text]jsonindexes[]last[2]first[]] :map[[$:/HistoryList]get[text]jsonget<currentTiddler>,[title]] -[is[system]]:else[all[current]backlinks[]!is[system]]:else[all[current]!subfilter<notShowFolderUnder>tagging[]!subfilter<folderExcludeFilter>]:else[all[tiddlers]!title<currentTiddler>prefix<currentTiddler>]:else[all[current]backtranscludes[]] -[is[current]] +[limit[1]] %>
 				<%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/default-show]text[yes]] %>
 					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>!text[no]] %>
-						<<hover-content>>
+						<<inverse-link-and-folder-contents>>
 					<%endif%>
 				<%else%>
 					<%if [[$:/state/inverse-link-and-folder/show-manually/]addsuffix<currentTiddler>text[yes]] %>
-						<<hover-content>>
+						<<inverse-link-and-folder-contents>>
 					<%endif%>
 				<%endif%>
 			<%endif%>
