@@ -41,7 +41,8 @@
   }
 }
 
-.inverse-link-and-folder-card-reference > a.tc-tiddlylink {
+.inverse-link-and-folder-card-reference > a.tc-tiddlylink,
+.inverse-link-and-folder-card-reference > .tc-eventcatcher > a.tc-tiddlylink {
   color: inherit;
   background: inherit;
   display: block;
@@ -53,12 +54,14 @@
   transition: all 0.125s ease;
 }
 @media (max-width: 815px) {
-  .inverse-link-and-folder-card-reference > a.tc-tiddlylink {
+  .inverse-link-and-folder-card-reference > a.tc-tiddlylink,
+  .inverse-link-and-folder-card-reference > .tc-eventcatcher > a.tc-tiddlylink {
     height: 80px;
   }
 }
 
-.inverse-link-and-folder-card-reference > a.tc-tiddlylink:hover {
+.inverse-link-and-folder-card-reference > a.tc-tiddlylink:hover,
+.inverse-link-and-folder-card-reference > .tc-eventcatcher > a.tc-tiddlylink:hover {
   text-decoration: none;
 }
 

@@ -7,10 +7,12 @@ tags: $:/tags/Stylesheet
   background: <<color page-background>>;
 }
 
-.inverse-link-and-folder-card-reference > a.tc-tiddlylink {
+.inverse-link-and-folder-card-reference > a.tc-tiddlylink,
+.inverse-link-and-folder-card-reference > .tc-eventcatcher > a.tc-tiddlylink {
   background: <<color tiddler-background>>;
 }
-.inverse-link-and-folder-card-reference > a.tc-tiddlylink:hover {
+.inverse-link-and-folder-card-reference > a.tc-tiddlylink:hover,
+.inverse-link-and-folder-card-reference > .tc-eventcatcher > a.tc-tiddlylink:hover {
   color: <<color sidebar-tab-foreground>>;
   background: <<color sidebar-tab-background>>;
 }

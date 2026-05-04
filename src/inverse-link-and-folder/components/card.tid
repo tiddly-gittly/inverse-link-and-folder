@@ -7,32 +7,40 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/components/card
   <%if [subfilter<filter>] -[is[current]] +[limit[1]] %>
     <li class="inverse-link-and-folder-card-sub-title"><strong><$transclude $variable="lingo" title=<<lingoKey>>/></strong></li>
     <$list filter=<<filter>>>
-      <$let hoverItemState={{{ [[$:/state/inverse-link-and-folder/hover-item/]addsuffix<currentTiddler>] }}}>
-        <li class="inverse-link-and-folder-card-reference">
+      <li class="inverse-link-and-folder-card-reference">
+        <%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/hover-to-show]text[yes]] %>
+          <$eventcatcher $mouseover="""<$action-setfield $tiddler={{{ [[$:/state/inverse-link-and-folder/hover-item/]addsuffix<currentTiddler>] }}} text="yes"/>""" stopPropagation="never" tag="div">
+            <$link>
+              <b>
+                <$transclude field="caption">
+                  <$view field="title"/>
+                </$transclude>
+              </b>
+              <$reveal state={{{ [[$:/state/inverse-link-and-folder/hover-item/]addsuffix<currentTiddler>] }}} type="match" text="yes">
+                <div class="inverse-link-and-folder-card-content">
+                  <$transclude field="text" mode="inline" />
+                </div>
+              </$reveal>
+              <$reveal state={{{ [[$:/state/inverse-link-and-folder/hover-item/]addsuffix<currentTiddler>] }}} type="nomatch" text="yes">
+                <div class="inverse-link-and-folder-card-content">
+                  <span>&nbsp;</span>
+                </div>
+              </$reveal>
+            </$link>
+          </$eventcatcher>
+        <%else%>
           <$link>
             <b>
               <$transclude field="caption">
                 <$view field="title"/>
               </$transclude>
             </b>
-            <%if [[$:/plugins/linonetwo/inverse-link-and-folder/configs/hover-to-show]text[yes]] %>
-              <%if [<hoverItemState>text[yes]] %>
-                <div class="inverse-link-and-folder-card-content">
-                  <$transclude field="text" mode="inline" />
-                </div>
-              <%else%>
-                <$eventcatcher $to=<<hoverItemState>> events="mouseenter" actions="""<$action-setfield $tiddler=<<hoverItemState>> text="yes"/>""">
-                  <div class="inverse-link-and-folder-card-content" style="min-height:0.5em;"/>
-                </$eventcatcher>
-              <%endif%>
-            <%else%>
-              <div class="inverse-link-and-folder-card-content">
-                <$transclude field="text" mode="inline" />
-              </div>
-            <%endif%>
+            <div class="inverse-link-and-folder-card-content">
+              <$transclude field="text" mode="inline" />
+            </div>
           </$link>
-        </li>
-      </$let>
+        <%endif%>
+      </li>
     </$list>
   <%endif%>
 \end
