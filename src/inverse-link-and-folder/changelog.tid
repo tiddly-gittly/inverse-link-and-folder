@@ -2,6 +2,10 @@ title: $:/plugins/linonetwo/inverse-link-and-folder/changelog
 caption: Changelog
 type: text/vnd.tiddlywiki
 
+!! v1.3.3 (2026-05-29)
+
+* Fixed the outer visibility check so the inverse-link-and-folder area still appears when child tiddlers are in skinny (lazy-loaded) state without text content. Moved ``backlinks[]`` and ``backtranscludes[]`` to the end of the ``:else`` chain and prioritized ``prefix`` and ``tagging[]`` checks that do not require loaded text.
+
 !! v1.3.2 (2026-05-04)
 
 * Fixed per-card hover lazy loading so card previews render after the card is hovered instead of staying blank.
